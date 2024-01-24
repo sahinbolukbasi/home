@@ -1,10 +1,302 @@
 <!DOCTYPE html>
-<html>
-<body style="background-color: black;">
-<center style=" margin:20%; color: white;"> 
-	<h1 style="font-size: 100px;" >Yakında...</h1>
-	<h4> By Şahin BÖLÜKBAŞI</h4>
-	</center>
+<html lang="tr" data-bs-theme="light" >
+<head>
+  <title>Şahin BÖLÜKBAŞI</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    *{
+        font-family: 'Poppins', sans-serif !important;
+    }
 
+    .socialMediaIcon{
+    color: #000;
+    font-size: 35px;
+    padding: 10px;
+    }
+    .socialMediaIcon:hover{
+        color: #575757;
+        transition-duration: 600ms;
+    }
+    .filterDiv{ 
+        display: none;
+    }
+    .show {
+        display: inline-block;
+    }
+    .active-button {
+      background-color: black !important;
+      color: white !important;
+    }
+
+    .carousel-control-next-icon:after
+    {
+    content: '>';
+    font-size: 55px;
+    color: black;
+    }
+
+    .carousel-control-prev-icon:after {
+    content: '<';
+    font-size: 55px;
+    color: black;
+    }
+    .cardFlex{
+        margin-left: 10%; 
+        margin-top:5%;
+    }
+   .cardSize
+   {
+    max-width:80%; 
+    max-height:40%;
+   }
+   
+
+</style>
+<body>
+<div class="container-md mt-5" style="height:50%;">
+  <div class="row">
+    <div class="col-md-4 " style="margin-top:10%;">
+        <div class="text-center">
+            <img src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/ATL" class="rounded-circle" alt="user" style="width:40%;height:20%;">
+            <h1 class="p-3"> Şahin BÖLÜKBAŞI </h1>
+            <div class="d-grid p-3 gap-2 col-6 mx-auto">
+                <button class="btn btn-dark" type="button" onclick="openMailClient()">E-Mail Gönder</button>               
+            </div>
+            <div class="m-4 p-3">
+                <a href="http://www.linkedin.com/in/şahin-bölükbaşı-b7377a171"  class="socialMediaIcon" target="_blank"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/sahinbolukbasi" class="socialMediaIcon"  target="_blank">
+                    <i class="bi bi-github"></i></a>
+                <a href="https://sahinbolukbasi.medium.com/" class="socialMediaIcon" target="_blank">
+                    <i class="bi bi-medium"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8  mt-5" >
+        <div class="accordion accordion-flush bg-secondary" id="accordionFlushExample">
+            <div class="accordion-item"><!-- HAKKIMDA-->
+                <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                HAKKIMDA
+                </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        Yıllardır yazılıma olan ilgimle birlikte, uzun bir süredir bu alanda projeler geliştirmekteyim. Şu anda bir Database Developer olarak çalışmaktayım ve aynı zamanda Back-End alanında kendimi geliştirmeye devam etmekteyim.
+                        Gelecekteki hedefim, iş dünyasında daha fazla etki yaratmak ve başarılı projelere imza atmaktır. Bu doğrultuda, kendi işimi kurmayı veya daha büyük bir organizasyonda liderlik pozisyonlarını hedeflemeyi düşünüyorum. Bu hedeflere ulaşmak için sürekli olarak kendimi geliştirmek, yeni beceriler edinmek ve sektördeki en son trendleri takip etmek için çaba sarf ediyorum.
+                        Yazılım dünyasında kalıcı bir etki yaratmak için sürekli olarak kendimi geliştirmek ve yenilikçi çözümler üretmek için çalışıyorum. Değişen teknolojik trendleri yakından takip ediyor, yeni teknolojilere hızla adapte olmaya odaklanıyorum. Bu doğrultuda, eğitimler almak, konferanslara katılmak ve sektör liderlerinin deneyimlerini takip etmek gibi kaynakları aktif bir şekilde kullanıyorum.
+                        Ayrıca, liderlik becerilerimi güçlendirmek için çeşitli projelerde yönetici ve koordinatör rollerinde görev aldım. Ekip çalışmasını yönetmek, işbirliği ve iletişim becerilerimi geliştirmek için sürekli olarak çalışıyorum. Bu sayede, başarılı projelerde yer almak ve takımımla birlikte hedeflere ulaşmak için gerekli liderlik yeteneklerini geliştiriyorum.
+                        Yazılım projelerimden ve başarı hikayelerimden bahsetmekten mutluluk duyarım. Ayrıca, sektördeki diğer yazılım profesyonelleriyle iletişim kurmak, fikir alışverişinde bulunmak ve yeni işbirlikleri için bağlantılarımı genişletmek için buradayım.
+                        Hakkımda daha fazla bilgi edinmek ve bağlantı kurmak için sosyal medyadaki profilleri mi ziyaret edebilirsiniz.  
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item"><!--KULLANDIĞIM TEKNOLOJİLER-->
+                <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    KULLANDIĞIM TEKNOLOJİLER
+                </button>
+                </h2>
+                
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="text-center py-3"> 
+                        <button id="btn1" type="button" class="btn btn-outline-dark m-1" onclick="filterSelection('all');toggleButtonType('btn1');">Tümü</button>
+                        <button id="btn2" type="button" class="btn btn-outline-dark m-1" onclick="filterSelection('language');toggleButtonType('btn2');">Yazılım Dili</button>
+                        <button id="btn3" type="button" class="btn btn-outline-dark m-1" onclick="filterSelection('freamwork');toggleButtonType('btn3');">Freamwork</button>
+                        <button id="btn4" type="button" class="btn btn-outline-dark m-1" onclick="filterSelection('library');toggleButtonType('btn4');">Kütüphane</button>
+                        <button id="btn5" type="button" class="btn btn-outline-dark m-1" onclick="filterSelection('program');toggleButtonType('btn5');">Program</button>
+                    </div>
+                    <div class="accordion-body d-flex flex-wrap gap-3 justify-content-centter">
+                        <a href="https://www.arduino.cc/" target="_blank" rel="noreferrer"  ><img src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" alt="arduino" width="60" height="60" class="filterDiv program"/></a> 
+                        <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer" ><img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="60" height="60"/></a> 
+                        <a href="https://getbootstrap.com" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="60" height="60" class="filterDiv freamwork"/></a> 
+                        <a href="https://www.chartjs.org" target="_blank" rel="noreferrer" ><img src="https://www.chartjs.org/media/logo-title.svg" alt="chartjs" width="60" height="60" class="filterDiv library"/></a> 
+                        <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="60" height="60" class="filterDiv language"/></a> 
+                        <a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="60" height="60" class="filterDiv language"/></a> 
+                        <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="60" height="60" class="filterDiv language"/></a> 
+                        <a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer" ><img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="django" width="60" height="60"  class="filterDiv freamwork"/></a> 
+                        <a href="https://www.docker.com/" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="60" height="60"  class="filterDiv freamwork"/></a> 
+                        <a href="https://flask.palletsprojects.com/" target="_blank" rel="noreferrer" ><img src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg" alt="flask" width="60" height="60" class="filterDiv freamwork"/></a> 
+                        <a href="https://flutter.dev" target="_blank" rel="noreferrer" ><img src="https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg" alt="flutter" width="60" height="60"  class="filterDiv freamwork"/></a> 
+                        <a href="https://git-scm.com/" target="_blank" rel="noreferrer" ><img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="60" height="60"  class="filterDiv freamwork"/></a> 
+                        <a href="https://grafana.com" target="_blank" rel="noreferrer" ><img src="https://www.vectorlogo.zone/logos/grafana/grafana-icon.svg" alt="grafana" width="60" height="60"  class="filterDiv freamwork"/></a> 
+                        <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="60" height="60"  class="filterDiv language"/></a> 
+                        <a href="https://www.java.com" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="60" height="60"  class="filterDiv freamwork"/></a> 
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer" > <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="60" height="60"  class="filterDiv language"/></a> 
+                        <a href="https://kubernetes.io" target="_blank" rel="noreferrer" ><img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="kubernetes" width="60" height="60"  class="filterDiv freamwork"/></a> 
+                        <a href="https://www.linux.org/" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="60" height="60"  class="filterDiv freamwork"/></a> 
+                        <a href="https://www.mathworks.com/" target="_blank" rel="noreferrer" ><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="matlab" width="60" height="60"  class="filterDiv freamwork"/></a> 
+                        <a href="https://www.microsoft.com/en-us/sql-server" target="_blank" rel="noreferrer" > <img src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="mssql" width="60" height="60"  class="filterDiv freamwork"/></a> 
+                        <a href="https://www.nginx.com" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nginx/nginx-original.svg" alt="nginx" width="60" height="60"  class="filterDiv freamwork"/> </a> 
+                        <a href="https://opencv.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="opencv" width="60" height="60" class="filterDiv freamwork"/></a> 
+                        <a href="https://www.oracle.com/" target="_blank" rel="noreferrer" > <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/oracle/oracle-original.svg" alt="oracle" width="60" height="60"  class="filterDiv freamwork"/></a> 
+                        <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="60" height="60" class="filterDiv library"/></a>
+                        <a href="https://www.postgresql.org" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="60" height="60"  class="filterDiv freamwork"/></a> 
+                        <a href="https://postman.com" target="_blank" rel="noreferrer" ><img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="60" height="60"  class="filterDiv freamwork"/></a> 
+                        <a href="https://www.python.org" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="60" height="60"  class="filterDiv freamwork"/></a> 
+                        <a href="https://pytorch.org/" target="_blank" rel="noreferrer" ><img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="60" height="60"  class="filterDiv freamwork"/></a> 
+                        <a href="https://www.rabbitmq.com" target="_blank" rel="noreferrer" ><img src="https://www.vectorlogo.zone/logos/rabbitmq/rabbitmq-icon.svg" alt="rabbitMQ" width="60" height="60"  class="filterDiv freamwork"/></a> 
+                        <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer" ><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="60" height="60"  class="filterDiv library"/></a> 
+                        <a href="https://seaborn.pydata.org/" target="_blank" rel="noreferrer" ><img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="seaborn" width="60" height="60"  class="filterDiv library"/></a> 
+                        <a href="https://www.selenium.dev" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/detain/svg-logos/780f25886660cef088af994181646db2f6b1a3f8/svg/sselenium-logo.svg" alt="selenium" width="60" height="60"  class="filterDiv library"/></a> 
+                        <a href="https://www.sqlite.org/" target="_blank" rel="noreferrer" ><img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="sqlite" width="60" height="60"  class="filterDiv freamwork"/></a> 
+                    </div>                
+                </div>
+            </div>
+            <div class="accordion-item"><!-- YAPTIĞIM PROJELER-->
+                <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                YAPTIĞIM PROJELER
+                </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
+                            <div class="carousel-inner "    >
+                                <div class="carousel-item active  cardFlex" >                                
+                                    <div class="card mb-3 cardSize">
+                                        <div class="row g-0">
+                                          <div class="col-md-4">
+                                            <img src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/ATL" class="img-fluid rounded-start" alt="...">
+                                          </div>
+                                          <div class="col-md-8">
+                                            <div class="card-body">
+                                              <h5 class="card-title">Card title 1</h5>
+                                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item cardFlex" >
+                                    <div class="card mb-3 cardSize">
+                                        <div class="row g-0">
+                                          <div class="col-md-4">
+                                            <img src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/ATL" class="img-fluid rounded-start" alt="...">
+                                          </div>
+                                          <div class="col-md-8">
+                                            <div class="card-body">
+                                              <h5 class="card-title">Card title 2</h5>
+                                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item cardFlex">
+                                    <div class="card mb-3 cardSize">
+                                        <div class="row g-0">
+                                          <div class="col-md-4">
+                                            <img src="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/ATL" class="img-fluid rounded-start" alt="...">
+                                          </div>
+                                          <div class="col-md-8">
+                                            <div class="card-body">
+                                              <h5 class="card-title">Card title 3</h5>
+                                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev" >
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            </button>
+                            <button class="carousel-control-next "  type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                    </div>
+                    
+                </div>
+            </div>          
+        </div>
+    </div>
+
+  </div>
+</div>
+<script>
+
+const options = {
+  bottom: 'unset', // default: '32px'
+  top: '1%', // default: '32px'
+  right: '2%', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.3s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: false, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+
+filterSelection("all")
+function filterSelection(c) {
+    var x, i;
+    x = document.getElementsByClassName("filterDiv");
+    if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+            RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
+        }
+}
+
+function AddClass(element, name) {
+var i, arr1, arr2;
+arr1 = element.className.split(" ");
+arr2 = name.split(" ");
+for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+}
+}
+
+function RemoveClass(element, name) {
+var i, arr1, arr2;
+arr1 = element.className.split(" ");
+arr2 = name.split(" ");
+for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+    arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+}
+element.className = arr1.join(" ");
+}
+
+
+//Mail send
+function openMailClient() {
+    window.location.href = "mailto:sahinbolukbasii@gmail.com?subject=Konu&body=Mesaj metni";
+}
+
+document.getElementById('btn1').classList.add('active-button');
+function toggleButtonType(buttonId) {
+    var buttons = document.querySelectorAll('.btn');
+    // Tüm butonları beyaz yap
+    buttons.forEach(function(button) {
+    button.classList.remove('active-button');
+    });
+
+    var activeButton = document.getElementById(buttonId);
+
+    // Tıklanan butonu aktif yap
+    activeButton.classList.add('active-button');
+}
+
+</script>
 </body>
 </html>
