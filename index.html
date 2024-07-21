@@ -55,13 +55,37 @@
     max-width:80%; 
     max-height:40%;
    }
+   .containerBlog {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px; /* Aralarına boşluk bırakır */
+    }
+    .containerBlog a {
+        flex: 1 1 22%; /* Her bir öğenin en az %22 genişliğinde olmasını sağlar */
+        box-sizing: border-box;
+        text-align: center; /* Resimleri ortalar */
+        display: block; /* Bağlantı elemanlarının blok seviyesinde olmasını sağlar */
+    }
+    .containerBlog img {
+        width: 100%; /* Resimleri kapsayıcı div'e göre genişletir */
+        height: 150px; /* Yüksekliği sabitler */
+        object-fit: contain; /* Resmin kapsayıcıya uygun şekilde görünmesini sağlar */
+        border: none; /* Kenarlıkları kaldırır */
+        max-width: 200px; /* Maksimum genişliği sınırlar */
+        margin: 0 auto; /* Resimleri ortalar */
+        transition: all 0.3s ease; /* Geçiş efektini tanımlar */
+    }
+    .containerBlog a:hover img {
+        opacity: 0.7; /* Şeffaflık efekti */
+        transform: scale(0.9); /* Küçültme efekti */
+    }
 </style>
 <body>
 <div class="container-md mt-5" style="height:50%;">
   <div class="row">
     <div class="col-md-4 " style="margin-top:5%;">
         <div class="text-center">
-            <img src="https://github.com/sahinbolukbasi/home/blob/main/sahinPhoto-min.png?raw=true"  class="rounded-circle" alt="user" style="width:80%; height:20%;"/>
+            <img src="https://github.com/sahinbolukbasi/home/blob/main/sahinPhoto-min.png?raw=true"  class="rounded-circle" alt="user" style="width:70%; height:20%;"/>
             <h1 class="p-3"> Şahin BÖLÜKBAŞI </h1>
             <div class="d-grid p-3 gap-2 col-6 mx-auto">
                 <button class="btn btn-dark" type="button" onclick="openMailClient()">E-Mail Gönder</button>               
@@ -86,19 +110,19 @@
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
-                      Yazılıma olan uzun süreli ilgim sayesinde, yıllardır bu alanda çeşitli projeler geliştirmekteyim. Şu anda Ar-Ge Developer Uzmanı olarak görev yapıyorum ve bu pozisyonda ileri teknolojiler üzerine yoğunlaşıyorum. C#, ASP.NET MVC, Azure DevOps ve RESTful Web API'ler gibi modern teknolojilerle çalışarak, birçok firmaya yenilikçi ve ölçeklenebilir çözümler sunuyorum. Bu süreçte, bulut tabanlı çözümler, mikro servis mimarisi ve API geliştirme konularında derinlemesine uzmanlaştım.
+                    Yazılıma olan uzun süreli ilgim sayesinde, yıllardır bu alanda çeşitli projeler geliştirmekteyim. Şu anda Ar-Ge Developer Uzmanı olarak görev yapıyorum ve bu pozisyonda ileri teknolojiler üzerine yoğunlaşıyorum. C#, ASP.NET MVC, Azure DevOps ve RESTful Web API'ler gibi modern teknolojilerle çalışarak, birçok firmaya yenilikçi ve ölçeklenebilir çözümler sunuyorum. Bu süreçte, bulut tabanlı çözümler, mikro servis mimarisi ve API geliştirme konularında derinlemesine uzmanlaştım.
 
-  Gelecekteki hedefim, iş dünyasında daha büyük bir etki yaratmak ve daha büyük ölçekli projelere imza atmaktır. Kendi girişimimi kurmayı veya büyük bir organizasyonda liderlik pozisyonlarında görev almayı amaçlıyorum. Bu hedeflere ulaşmak için sürekli olarak kendimi geliştiriyor, yeni beceriler edinmek ve sektördeki en son trendleri yakından takip etmek için çaba gösteriyorum.
-  
-  Yazılım dünyasında kalıcı ve anlamlı bir etki yaratmak için sürekli olarak kendimi yenilemek ve yenilikçi çözümler üretmek üzerine çalışıyorum. Teknolojik trendleri yakından izleyerek, yeni teknolojilere hızlı bir şekilde adapte olmayı hedefliyorum. Bu doğrultuda, düzenli olarak eğitimler alıyor, konferanslara katılıyor ve sektör liderlerinin deneyimlerinden faydalanıyorum.
-  
-  Liderlik becerilerimi güçlendirmek adına çeşitli projelerde yönetici ve koordinatör rollerinde görev aldım. Ekip çalışmasını etkin bir şekilde yönetmek, işbirliği ve iletişim becerilerimi geliştirmek için sürekli çaba sarf ediyorum. Bu sayede, başarılı projelerde yer alarak ve takımımla birlikte hedeflere ulaşarak gerekli liderlik yeteneklerini pekiştiriyorum.
-  
-  LinkedIn profilimde, üzerinde çalıştığım yazılım projelerinden , blog yazılarımdan ve başarı hikayelerimden bahsetmekten mutluluk duyarım. Ayrıca, sektördeki diğer yazılım profesyonelleriyle iletişim kurmak, fikir alışverişinde bulunmak ve yeni işbirlikleri için bağlantılarımı genişletmek için buradayım.
-  
-  Hakkımda daha fazla bilgi edinmek ve bağlantı kurmak için profilimi ziyaret edebilirsiniz.
-  
-  Teşekkürler!
+                    Gelecekteki hedefim, iş dünyasında daha büyük bir etki yaratmak ve daha büyük ölçekli projelere imza atmaktır. Kendi girişimimi kurmayı veya büyük bir organizasyonda liderlik pozisyonlarında görev almayı amaçlıyorum. Bu hedeflere ulaşmak için sürekli olarak kendimi geliştiriyor, yeni beceriler edinmek ve sektördeki en son trendleri yakından takip etmek için çaba gösteriyorum.
+                    
+                    Yazılım dünyasında kalıcı ve anlamlı bir etki yaratmak için sürekli olarak kendimi yenilemek ve yenilikçi çözümler üretmek üzerine çalışıyorum. Teknolojik trendleri yakından izleyerek, yeni teknolojilere hızlı bir şekilde adapte olmayı hedefliyorum. Bu doğrultuda, düzenli olarak eğitimler alıyor, konferanslara katılıyor ve sektör liderlerinin deneyimlerinden faydalanıyorum.
+                    
+                    Liderlik becerilerimi güçlendirmek adına çeşitli projelerde yönetici ve koordinatör rollerinde görev aldım. Ekip çalışmasını etkin bir şekilde yönetmek, işbirliği ve iletişim becerilerimi geliştirmek için sürekli çaba sarf ediyorum. Bu sayede, başarılı projelerde yer alarak ve takımımla birlikte hedeflere ulaşarak gerekli liderlik yeteneklerini pekiştiriyorum.
+                    
+                    LinkedIn profilimde, üzerinde çalıştığım yazılım projelerinden , blog yazılarımdan ve başarı hikayelerimden bahsetmekten mutluluk duyarım. Ayrıca, sektördeki diğer yazılım profesyonelleriyle iletişim kurmak, fikir alışverişinde bulunmak ve yeni işbirlikleri için bağlantılarımı genişletmek için buradayım.
+                    
+                    Hakkımda daha fazla bilgi edinmek ve bağlantı kurmak için profilimi ziyaret edebilirsiniz.
+                    
+                    Teşekkürler!
                     </div>
                 </div>
             </div>
@@ -184,11 +208,11 @@
                                     <div class="card mb-3 cardSize">
                                         <div class="row g-0">
                                           <div class="col-md-4">
-                                            <img src="https://media.licdn.com/dms/image/D4D2DAQG8zeWC0jIVEA/profile-treasury-image-shrink_800_800/0/1685176495774?e=1706738400&v=beta&t=PHFEXejuiG1MhgjDFxewdyg6nmzVMMGnbsOCzH4z05w" class="img-fluid rounded-start m-1" alt="...">
+                                            <img src="https://media.licdn.com/dms/image/D4D2DAQG8zeWC0jIVEA/profile-treasury-image-shrink_800_800/0/1685176495774?e=1722186000&v=beta&t=Grm20ZNmow8AEWUQ5MMUvBBKlMdxLC4Yu78ua3fZ0ok" class="img-fluid rounded-start m-1" alt="...">
                                           </div>
                                           <div class="col-md-8">
                                             <div class="card-body">
-                                              <h5 class="card-title">Card title 2</h5>
+                                              <h5 class="card-title">Hızlı Vuruş Test Aygıtı</h5>
                                               <p class="card-text">Gelistirmis oldugum aygit el beceri ve kordinasyon testlerinde kullanilan bir cihazdir. Donanim tarafinda arduino ile devre kartini tasarlarken , cihazin dis kabini solidworks kullanarak tasarlandi ve 3d yazicidan baskisi alind .Yazilim tarafinda ise C#
                                                  kullanilarak masaüstü ugulamasi gelitistilerek kullanimi ve analiz sonuclarinin akinmasi daha kolay bir hale getirlidi.</p>
                                                  <button type="button" class="btn btn-outline-dark m-1">Projemi İncele</button>
@@ -229,7 +253,44 @@
                     </div>
                     
                 </div>
-            </div>          
+            </div>    
+            <div class="accordion-item"><!-- TAKİP ETTİĞİM BLOGLAR-->
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                  TAKİP ETTİĞİM BLOGLAR
+                  </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="containerBlog">
+                            <a href="https://netflixtechblog.com/" target="_blank"> 
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png" class="img-thumbnail" alt="Netflix"> 
+                            </a>   
+                            <a href="https://www.uber.com/en-US/blog/engineering/" target="_blank"> 
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Uber_logo_2018.svg/1200px-Uber_logo_2018.svg.png" class="img-thumbnail" alt="Uber"> 
+                            </a>   
+                            <a href="https://blog.cloudflare.com/" target="_blank"> 
+                                <img src="https://blog.cloudflare.com/content/images/2022/10/CF_logo_stacked_blktype.png" class="img-thumbnail" alt="Cloudflare"> 
+                            </a>   
+                            <a href="https://engineering.linkedin.com/" target="_blank"> 
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1200px-LinkedIn_icon.svg.png" class="img-thumbnail" alt="LinkedIn"> 
+                            </a>   
+                            <a href="https://discord.com/blog/" target="_blank"> 
+                                <img src="https://upload.wikimedia.org/wikipedia/tr/5/57/Discord_logo_old.png" class="img-thumbnail" alt="Discord"> 
+                            </a>   
+                            <a href="https://aws.amazon.com/tr/architecture/?refid=04d8ec99-6d78-4091-9a39-d7ab44b457a5&cards-all.sort-by=item.additionalFields.sortDate&cards-all.sort-order=desc&awsf.content-type=*all&awsf.methodology=*all&awsf.tech-category=*all&awsf.industries=*all&awsf.business-category=*all" target="_blank"> 
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2xQcwKitRgXfqdi34DYlocPSEXD2G2zZipg&s" class="img-thumbnail" alt="AWS"> 
+                            </a>   
+                            <a href="https://slack.engineering/how-slack-built-shared-channels/" target="_blank"> 
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Slack_Technologies_Logo.svg/2560px-Slack_Technologies_Logo.svg.png" class="img-thumbnail" alt="Slack"> 
+                            </a>   
+                            <a href="https://stripe.com/blog" target="_blank"> 
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS0tqyRUVA3a5qlEcr0D6cPgtLs-9kvLb2vw&s" class="img-thumbnail" alt="Stripe"> 
+                            </a>   
+                        </div>
+                    </div>
+                </div>
+            </div>      
         </div>
     </div>
   </div>
@@ -303,3 +364,4 @@ function toggleButtonType(buttonId) {
 </script>
 </body>
 </html>
+ 
