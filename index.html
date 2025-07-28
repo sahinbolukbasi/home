@@ -1,367 +1,1504 @@
 <!DOCTYPE html>
-<html lang="tr" data-bs-theme="light" >
+<html lang="tr" data-bs-theme="dark">
 <head>
-  <title>Şahin BÖLÜKBAŞI</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-<link rel="shortcut icon" href="https://img.icons8.com/pastel-glyph/64/FFFFFF/code--v1.png" type="iæ√√√√√√√√√√√mage/x-icon">
+    <title>Şahin BÖLÜKBAŞI | Full Stack Developer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Şahin Bölükbaşı - DevOps Engineer">
+    <meta name="keywords" content="yazılım geliştirici, ,devops engineer ,backend developer, C#, ASP.NET, Azure, Python, web development">
+    
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://img.icons8.com/nolan/64/code.png" type="image/x-icon">
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
+
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-    *{
-        font-family: 'Poppins', sans-serif !important;
+    :root {
+        --neon-cyan: #00ffff;
+        --neon-purple: #ff00ff;
+        --neon-green: #39ff14;
+        --neon-pink: #ff1493;
+        --neon-blue: #0080ff;
+        --dark-bg: #0a0a0a;
+        --darker-bg: #050505;
+        --glass-bg: rgba(255, 255, 255, 0.1);
+        --glass-border: rgba(255, 255, 255, 0.2);
+        --text-primary: #ffffff;
+        --text-secondary: #b0b0b0;
+        --text-muted: #707070;
     }
-    .socialMediaIcon{
-    color: #000;
-    font-size: 35px;
-    padding: 10px;
+
+    * {
+        font-family: 'Space Grotesk', sans-serif;
+        box-sizing: border-box;
     }
-    .socialMediaIcon:hover{
-        color: #575757;
-        transition-duration: 600ms;
+
+    body {
+        background: var(--dark-bg);
+        color: var(--text-primary);
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        min-height: 100vh;
+        position: relative;
     }
-    .filterDiv{ 
-        display: none;
+
+    /* Animated Background */
+    #particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
     }
-    .show {
+
+    .cyber-grid {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 50px 50px;
+        z-index: -1;
+        animation: gridMove 20s linear infinite;
+    }
+
+    @keyframes gridMove {
+        0% { transform: translate(0, 0); }
+        100% { transform: translate(50px, 50px); }
+    }
+
+    /* Navigation */
+    .nav-container {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: 50px;
+        padding: 10px 20px;
+    }
+
+    .nav-item {
+        display: inline-block;
+        margin: 0 15px;
+        padding: 8px 16px;
+        color: var(--text-secondary);
+        text-decoration: none;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    .nav-item:hover {
+        color: var(--neon-cyan);
+        background: rgba(0, 255, 255, 0.1);
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        text-shadow: 0 0 10px var(--neon-cyan);
+    }
+
+    /* Main Container */
+    .main-wrapper {
+        padding-top: 80px;
+        min-height: 100vh;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+    }
+
+    .hero-content {
+        z-index: 10;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .glitch-container {
+        position: relative;
         display: inline-block;
     }
-    .active-button {
-      background-color: black !important;
-      color: white !important;
+
+    .hero-title {
+        font-family: 'Orbitron', monospace;
+        font-size: clamp(3rem, 8vw, 6rem);
+        font-weight: 900;
+        background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple), var(--neon-green));
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientShift 3s ease-in-out infinite;
+        margin-bottom: 20px;
+        text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
     }
-    .carousel-control-next-icon:after
-    {
-    content: '>';
-    font-size: 55px;
-    color: black;
+
+    @keyframes gradientShift {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
     }
-    .carousel-control-prev-icon:after {
-    content: '<';
-    font-size: 55px;
-    color: black;
+
+    .hero-subtitle {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: clamp(1rem, 3vw, 1.5rem);
+        color: var(--neon-green);
+        margin-bottom: 30px;
+        text-shadow: 0 0 15px var(--neon-green);
     }
-    .cardFlex{
-        margin-left: 10%; 
-        margin-top:5%;
+
+    .hero-description {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        margin-bottom: 40px;
+        line-height: 1.6;
     }
-   .cardSize
-   {
-    max-width:80%; 
-    max-height:40%;
-   }
-   .containerBlog {
+
+    .profile-image-container {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 30px;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 3px solid var(--neon-cyan);
+        box-shadow: 
+            0 0 30px rgba(0, 255, 255, 0.5),
+            inset 0 0 30px rgba(0, 255, 255, 0.1);
+        animation: pulse 2s ease-in-out infinite;
+        transition: all 0.4s ease;
+        object-fit: cover;
+        filter: brightness(1.1) contrast(1.2) saturate(1.1);
+        cursor: pointer;
+    }
+
+    .profile-image:hover {
+        transform: scale(1.05) rotateY(10deg);
+        border-color: var(--neon-purple);
+        box-shadow: 
+            0 0 50px rgba(255, 0, 255, 0.8),
+            inset 0 0 50px rgba(255, 0, 255, 0.2),
+            0 15px 35px rgba(0, 255, 255, 0.3);
+        filter: brightness(1.3) contrast(1.4) saturate(1.3);
+    }
+
+    .profile-image-container::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple), var(--neon-green), var(--neon-pink));
+        z-index: -1;
+        opacity: 0;
+        animation: rotateBorder 3s linear infinite;
+        transition: opacity 0.3s ease;
+    }
+
+    .profile-image-container:hover::before {
+        opacity: 0.3;
+    }
+
+    @keyframes rotateBorder {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    /* Cyber Buttons */
+    .cyber-btn {
+        position: relative;
+        display: inline-block;
+        margin: 10px 15px;
+        padding: 15px 30px;
+        background: transparent;
+        border: 2px solid var(--neon-cyan);
+        color: var(--neon-cyan);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 2px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 100%, 15px 100%);
+    }
+
+    .cyber-btn:hover {
+        color: var(--dark-bg);
+        background: var(--neon-cyan);
+        box-shadow: 
+            0 0 30px var(--neon-cyan),
+            inset 0 0 30px rgba(0, 0, 0, 0.1);
+        text-shadow: none;
+    }
+
+    .cyber-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
+    }
+
+    .cyber-btn:hover::before {
+        left: 100%;
+    }
+
+    /* Social Links */
+    .social-matrix {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .social-node {
+        width: 60px;
+        height: 60px;
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .social-node::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .social-node:hover::before {
+        opacity: 1;
+    }
+
+    .social-node:hover {
+        transform: translateY(-5px) scale(1.1);
+        box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+        color: var(--dark-bg);
+    }
+
+    .social-node i {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Content Sections */
+    .content-section {
+        min-height: 100vh;
+        padding: 100px 0;
+        position: relative;
+    }
+
+    .section-title {
+        font-family: 'Orbitron', monospace;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 60px;
+        background: linear-gradient(45deg, var(--neon-purple), var(--neon-pink));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+    }
+
+    /* Glass Morphism Cards */
+    .glass-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: 20px;
+        padding: 30px;
+        margin: 20px 0;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .glass-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple), var(--neon-green));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .glass-card:hover::before {
+        opacity: 1;
+    }
+
+    .glass-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
+        border-color: var(--neon-cyan);
+    }
+
+    /* Tech Stack Grid */
+    .tech-matrix {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 20px;
+        margin: 40px 0;
+        padding: 20px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tech-node {
+        aspect-ratio: 1;
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: var(--text-primary);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        padding: 15px 10px;
+        min-height: 100px;
+        max-width: 120px;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+    }
+
+    /* Blog Grid Hover Effect - apply to tech-node */
+    .tech-node::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: radial-gradient(circle, var(--neon-cyan) 0%, transparent 70%);
+        transition: all 0.3s ease;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .tech-node:hover::after {
+        width: 200%;
+        height: 200%;
+    }
+
+    .tech-node:hover {
+        transform: translateY(-5px);
+        border-color: var(--neon-cyan);
+        box-shadow: 0 15px 30px rgba(0, 255, 255, 0.3);
+    }
+
+    .tech-node img {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 8px;
+        filter: brightness(1.2) saturate(1.5);
+        transition: all 0.3s ease;
+        object-fit: contain;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 2;
+    }
+
+    .tech-node:hover img {
+        filter: brightness(1.4) saturate(1.8) drop-shadow(0 0 6px rgba(0, 255, 255, 0.4));
+        transform: scale(1.05);
+    }
+
+    .tech-node span {
+        font-size: 11px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 1.2;
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 2;
+        margin-top: auto;
+        word-break: break-word;
+        max-width: 100%;
+        display: block;
+    }
+
+    .tech-node:hover span {
+        color: var(--neon-cyan);
+        text-shadow: 0 0 6px rgba(0, 255, 255, 0.6);
+        font-weight: 700;
+    }
+
+    /* Responsive adjustments for tech grid */
+    @media (max-width: 1200px) {
+        .tech-matrix {
+            grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+            gap: 15px;
+            padding: 15px;
+        }
+        
+        .tech-node {
+            width: 90px;
+            height: 90px;
+            min-height: 90px;
+            max-width: 90px;
+            padding: 12px 8px;
+            border-radius: 12px;
+        }
+        
+        .tech-node img {
+            width: 32px;
+            height: 32px;
+            margin-bottom: 6px;
+        }
+        
+        .tech-node span {
+            font-size: 10px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .tech-matrix {
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 12px;
+            padding: 10px;
+        }
+        
+        .tech-node {
+            width: 80px;
+            height: 80px;
+            min-height: 80px;
+            max-width: 80px;
+            padding: 10px 6px;
+            border-radius: 10px;
+        }
+        
+        .tech-node img {
+            width: 28px;
+            height: 28px;
+            margin-bottom: 5px;
+        }
+        
+        .tech-node span {
+            font-size: 9px;
+            line-height: 1.1;
+        }
+        
+        .tech-node:hover {
+            transform: translateY(-3px);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .tech-matrix {
+            grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+            gap: 10px;
+            padding: 8px;
+        }
+        
+        .tech-node {
+            width: 70px;
+            height: 70px;
+            min-height: 70px;
+            max-width: 70px;
+            padding: 8px 4px;
+            border-radius: 8px;
+        }
+        
+        .tech-node img {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 4px;
+        }
+        
+        .tech-node span {
+            font-size: 8px;
+            line-height: 1.0;
+        }
+    }
+
+    /* Project Cards */
+    .project-matrix {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin: 40px 0;
+    }
+
+    .project-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: 25px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .project-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover::before {
+        opacity: 1;
+    }
+
+    .project-card:hover {
+        transform: translateY(-15px) rotateX(5deg);
+        box-shadow: 0 25px 50px rgba(0, 255, 255, 0.3);
+    }
+
+    .project-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        filter: brightness(0.8) contrast(1.2);
+    }
+
+    .project-content {
+        padding: 25px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .project-title {
+        font-family: 'Orbitron', monospace;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--neon-green);
+        margin-bottom: 15px;
+        text-shadow: 0 0 10px var(--neon-green);
+    }
+
+    .project-description {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .tech-tags {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px; /* Aralarına boşluk bırakır */
+        gap: 8px;
+        margin-bottom: 20px;
     }
-    .containerBlog a {
-        flex: 1 1 22%; /* Her bir öğenin en az %22 genişliğinde olmasını sağlar */
-        box-sizing: border-box;
-        text-align: center; /* Resimleri ortalar */
-        display: block; /* Bağlantı elemanlarının blok seviyesinde olmasını sağlar */
+
+    .tech-tag {
+        padding: 5px 12px;
+        background: rgba(0, 255, 255, 0.2);
+        color: var(--neon-cyan);
+        border: 1px solid var(--neon-cyan);
+        border-radius: 15px;
+        font-size: 12px;
+        font-weight: 500;
+        text-shadow: 0 0 5px var(--neon-cyan);
     }
-    .containerBlog img {
-        width: 100%; /* Resimleri kapsayıcı div'e göre genişletir */
-        height: 150px; /* Yüksekliği sabitler */
-        object-fit: contain; /* Resmin kapsayıcıya uygun şekilde görünmesini sağlar */
-        border: none; /* Kenarlıkları kaldırır */
-        max-width: 200px; /* Maksimum genişliği sınırlar */
-        margin: 0 auto; /* Resimleri ortalar */
-        transition: all 0.3s ease; /* Geçiş efektini tanımlar */
+
+    /* Filter System */
+    .filter-matrix {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 40px;
     }
-    .containerBlog a:hover img {
-        opacity: 0.7; /* Şeffaflık efekti */
-        transform: scale(0.9); /* Küçültme efekti */
+
+    .filter-btn {
+        padding: 12px 24px;
+        background: transparent;
+        border: 2px solid var(--glass-border);
+        color: var(--text-secondary);
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+        border-color: var(--neon-purple);
+        color: var(--neon-purple);
+        background: rgba(255, 0, 255, 0.1);
+        box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+        text-shadow: 0 0 10px var(--neon-purple);
+    }
+
+    /* Terminal Effect */
+    .terminal {
+        background: var(--darker-bg);
+        border: 1px solid var(--neon-green);
+        border-radius: 10px;
+        padding: 20px;
+        font-family: 'JetBrains Mono', monospace;
+        color: var(--neon-green);
+        box-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
+        margin: 30px 0;
+    }
+
+    .terminal-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--neon-green);
+    }
+
+    .terminal-dots {
+        display: flex;
+        gap: 8px;
+        margin-right: 15px;
+    }
+
+    .terminal-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+
+    .terminal-dot.red { background: #ff5f56; }
+    .terminal-dot.yellow { background: #ffbd2e; }
+    .terminal-dot.green { background: #27ca3f; }
+
+    .terminal-content {
+        line-height: 1.8;
+    }
+
+    .terminal-prompt::before {
+        content: '$ ';
+        color: var(--neon-cyan);
+    }
+
+    .cursor {
+        animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+        0%, 50% { opacity: 1; }
+        51%, 100% { opacity: 0; }
+    }
+
+    /* Blog Grid */
+    .blog-matrix {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin: 40px 0;
+    }
+
+    .blog-node {
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: 20px;
+        padding: 25px;
+        text-align: center;
+        text-decoration: none;
+        color: var(--text-primary);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .blog-node::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: radial-gradient(circle, var(--neon-cyan) 0%, transparent 70%);
+        transition: all 0.3s ease;
+        transform: translate(-50%, -50%);
+    }
+
+    .blog-node:hover::after {
+        width: 200%;
+        height: 200%;
+    }
+
+    .blog-node:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(0, 255, 255, 0.3);
+        border-color: var(--neon-cyan);
+    }
+
+    .blog-node img {
+        width: 80px;
+        height: 40px;
+        object-fit: contain;
+        margin-bottom: 15px;
+        filter: brightness(1.2);
+        position: relative;
+        z-index: 2;
+    }
+
+    .blog-node h6 {
+        font-weight: 600;
+        margin: 0;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Filter System */
+    .filterDiv {
+        display: none;
+        animation: fadeInScale 0.5s ease-out;
+    }
+
+    .filterDiv.show {
+        display: block;
+    }
+
+    @keyframes fadeInScale {
+        from {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .nav-container {
+            left: 20px;
+            right: 20px;
+            transform: none;
+            width: calc(100% - 40px);
+        }
+
+        .hero-section {
+            height: auto;
+            padding: 100px 20px;
+        }
+
+        .content-section {
+            padding: 50px 20px;
+        }
+
+        .tech-matrix {
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 20px;
+        }
+
+        .project-matrix {
+            grid-template-columns: 1fr;
+        }
+
+        .social-matrix {
+            gap: 15px;
+        }
+
+        .social-node {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+        }
+    }
+
+    /* Scroll Animations */
+    .reveal {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.6s ease;
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Loading Animation */
+    .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--dark-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+    }
+
+    .loading-text {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 1.5rem;
+        color: var(--neon-cyan);
+        text-shadow: 0 0 20px var(--neon-cyan);
+        animation: loadingPulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes loadingPulse {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 1; }
     }
 </style>
+
 <body>
-<div class="container-md mt-5" style="height:50%;">
-  <div class="row">
-    <div class="col-md-4 " style="margin-top:5%;">
-        <div class="text-center">
-            <img src="https://github.com/sahinbolukbasi/home/blob/main/sahinPhoto-min.png?raw=true"  class="rounded-circle" alt="user" style="width:70%; height:20%;"/>
-            <h1 class="p-3"> Şahin BÖLÜKBAŞI </h1>
-            <div class="d-grid p-3 gap-2 col-6 mx-auto">
-                <button class="btn btn-dark" type="button" onclick="openMailClient()">E-Mail Gönder</button>               
-            </div>
-            <div class="m-4 p-3">
-                <a href="http://www.linkedin.com/in/şahin-bölükbaşı-b7377a171"  aria-label="Linkedin" class="socialMediaIcon" target="_blank"><i class="bi bi-linkedin"></i></a>
-                <a href="https://github.com/sahinbolukbasi" class="socialMediaIcon" aria-label="GitHub"  target="_blank">
-                    <i class="bi bi-github"></i></a>
-                <a href="https://sahinbolukbasi.medium.com/" aria-label="Medium" class="socialMediaIcon" target="_blank">
-                    <i class="bi bi-medium"></i></a>
-            </div>
-        </div>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-text">INITIALIZING_PORTFOLIO.exe</div>
     </div>
 
-    <div class="col-md-8  mt-5" >
-        <div class="accordion accordion-flush bg-secondary" id="accordionFlushExample">
-            <div class="accordion-item"><!-- HAKKIMDA-->
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                  HAKKIMDA
-                  </button>
-                </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                    Yazılıma olan uzun süreli ilgim sayesinde, yıllardır bu alanda çeşitli projeler geliştirmekteyim. Şu anda Ar-Ge Developer Uzmanı olarak görev yapıyorum ve bu pozisyonda ileri teknolojiler üzerine yoğunlaşıyorum. C#, ASP.NET MVC, Azure DevOps ve RESTful Web API'ler gibi modern teknolojilerle çalışarak, birçok firmaya yenilikçi ve ölçeklenebilir çözümler sunuyorum. Bu süreçte, bulut tabanlı çözümler, mikro servis mimarisi ve API geliştirme konularında derinlemesine uzmanlaştım.
+    <!-- Animated Background -->
+    <div id="particles-js"></div>
+    <div class="cyber-grid"></div>
 
-                    Gelecekteki hedefim, iş dünyasında daha büyük bir etki yaratmak ve daha büyük ölçekli projelere imza atmaktır. Kendi girişimimi kurmayı veya büyük bir organizasyonda liderlik pozisyonlarında görev almayı amaçlıyorum. Bu hedeflere ulaşmak için sürekli olarak kendimi geliştiriyor, yeni beceriler edinmek ve sektördeki en son trendleri yakından takip etmek için çaba gösteriyorum.
-                    
-                    Yazılım dünyasında kalıcı ve anlamlı bir etki yaratmak için sürekli olarak kendimi yenilemek ve yenilikçi çözümler üretmek üzerine çalışıyorum. Teknolojik trendleri yakından izleyerek, yeni teknolojilere hızlı bir şekilde adapte olmayı hedefliyorum. Bu doğrultuda, düzenli olarak eğitimler alıyor, konferanslara katılıyor ve sektör liderlerinin deneyimlerinden faydalanıyorum.
-                    
-                    Liderlik becerilerimi güçlendirmek adına çeşitli projelerde yönetici ve koordinatör rollerinde görev aldım. Ekip çalışmasını etkin bir şekilde yönetmek, işbirliği ve iletişim becerilerimi geliştirmek için sürekli çaba sarf ediyorum. Bu sayede, başarılı projelerde yer alarak ve takımımla birlikte hedeflere ulaşarak gerekli liderlik yeteneklerini pekiştiriyorum.
-                    
-                    LinkedIn profilimde, üzerinde çalıştığım yazılım projelerinden , blog yazılarımdan ve başarı hikayelerimden bahsetmekten mutluluk duyarım. Ayrıca, sektördeki diğer yazılım profesyonelleriyle iletişim kurmak, fikir alışverişinde bulunmak ve yeni işbirlikleri için bağlantılarımı genişletmek için buradayım.
-                    
-                    Hakkımda daha fazla bilgi edinmek ve bağlantı kurmak için profilimi ziyaret edebilirsiniz.
-                    
-                    Teşekkürler!
-                    </div>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <a href="#home" class="nav-item" data-section="hero">HOME</a>
+        <a href="#about" class="nav-item" data-section="about">ABOUT</a>
+        <a href="#tech" class="nav-item" data-section="tech">TECH</a>
+        <a href="#projects" class="nav-item" data-section="projects">PROJECTS</a>
+        <a href="#blogs" class="nav-item" data-section="blogs">RESOURCES</a>
+    </nav>
+
+    <div class="main-wrapper">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content reveal">
+                <div class="profile-image-container">
+                    <img src="https://github.com/sahinbolukbasi/home/blob/main/sahinPhoto-min.png?raw=true" 
+                         class="profile-image" alt="Şahin Bölükbaşı">
+                </div>
+                
+                <div class="glitch-container">
+                    <h1 class="hero-title">ŞAHIN BÖLÜKBAŞI</h1>
+                </div>
+                
+                <p class="hero-subtitle">&gt; DevOps_Engineer.exe</p>
+                
+                <p class="hero-description">
+                   Currently serving as a DevOps Engineer, building on a solid foundation as a former
+                    Software Engineer with hands-on experience in C#, ASP.NET, and Python."                </p>
+                
+                <div class="d-flex justify-content-center flex-wrap">
+                    <a href="#" class="cyber-btn" onclick="openMailClient()">
+                        CONNECT
+                    </a>
+                    <a href="#projects" class="cyber-btn">
+                        VIEW_PROJECTS
+                    </a>
+                </div>
+                
+                <div class="social-matrix">
+                    <a href="http://www.linkedin.com/in/şahin-bölükbaşı-b7377a171" 
+                       class="social-node" target="_blank" aria-label="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/sahinbolukbasi" 
+                       class="social-node" target="_blank" aria-label="GitHub">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="https://sahinbolukbasi.medium.com/" 
+                       class="social-node" target="_blank" aria-label="Medium">
+                        <i class="bi bi-medium"></i>
+                    </a>
                 </div>
             </div>
-            <div class="accordion-item"><!--KULLANDIĞIM TEKNOLOJİLER-->
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                      KULLANDIĞIM TEKNOLOJİLER
-                  </button>
-                </h2>                
-                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="d-flex flex-wrap justify-content-centter py-3"> 
-                        <button id="btn1" type="button" class="btn btn-outline-dark m-1" onclick="filterSelection('all');toggleButtonType('btn1');">Tümü</button>
-                        <button id="btn2" type="button" class="btn btn-outline-dark m-1" onclick="filterSelection('language');toggleButtonType('btn2');">Yazılım Dili</button>
-                        <button id="btn3" type="button" class="btn btn-outline-dark m-1" onclick="filterSelection('freamwork');toggleButtonType('btn3');">Freamwork</button>
-                        <button id="btn4" type="button" class="btn btn-outline-dark m-1" onclick="filterSelection('library');toggleButtonType('btn4');">Kütüphane</button>
-                        <button id="btn5" type="button" class="btn btn-outline-dark m-1" onclick="filterSelection('program');toggleButtonType('btn5');">Program</button>
-                    </div>                    
-                    <div class="accordion-body d-flex flex-wrap gap-3 justify-content-centter">
-                        <a href="https://www.arduino.cc/" target="_blank" rel="noreferrer"  ><img src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" alt="arduino" width="60" height="60" class="filterDiv program"/></a> 
-                        <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer" ><img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="60" height="60" class="filterDiv program"/></a> 
-                        <a href="https://getbootstrap.com" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="60" height="60" class="filterDiv freamwork"/></a> 
-                        <a href="https://www.chartjs.org" target="_blank" rel="noreferrer" ><img src="https://www.chartjs.org/media/logo-title.svg" alt="chartjs" width="60" height="60" class="filterDiv library"/></a> 
-                        <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="60" height="60" class="filterDiv language"/></a> 
-                        <a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="60" height="60" class="filterDiv language"/></a> 
-                        <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="60" height="60" class="filterDiv language"/></a> 
-                        <a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer" ><img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="django" width="60" height="60"  class="filterDiv freamwork"/></a> 
-                        <a href="https://www.docker.com/" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="60" height="60"  class="filterDiv program"/></a> 
-                        <a href="https://flask.palletsprojects.com/" target="_blank" rel="noreferrer" ><img src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg" alt="flask" width="60" height="60" class="filterDiv freamwork"/></a> 
-                        <a href="https://flutter.dev" target="_blank" rel="noreferrer" ><img src="https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg" alt="flutter" width="60" height="60"  class="filterDiv freamwork"/></a> 
-                        <a href="https://git-scm.com/" target="_blank" rel="noreferrer" ><img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="60" height="60"  class="filterDiv program"/></a> 
-                        <a href="https://grafana.com" target="_blank" rel="noreferrer" ><img src="https://www.vectorlogo.zone/logos/grafana/grafana-icon.svg" alt="grafana" width="60" height="60"  class="filterDiv freamwork"/></a> 
-                        <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="60" height="60"  class="filterDiv language"/></a> 
-                        <a href="https://www.java.com" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="60" height="60"  class="filterDiv language"/></a> 
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer" > <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="60" height="60"  class="filterDiv language"/></a> 
-                        <a href="https://kubernetes.io" target="_blank" rel="noreferrer" ><img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="kubernetes" width="60" height="60"  class="filterDiv program"/></a> 
-                        <a href="https://www.linux.org/" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="60" height="60"  class="filterDiv program"/></a> 
-                        <a href="https://www.mathworks.com/" target="_blank" rel="noreferrer" ><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="matlab" width="60" height="60"  class="filterDiv freamwork"/></a> 
-                        <a href="https://www.microsoft.com/en-us/sql-server" target="_blank" rel="noreferrer" > <img src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="mssql" width="60" height="60"  class="filterDiv language"/></a> 
-                        <a href="https://www.nginx.com" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nginx/nginx-original.svg" alt="nginx" width="60" height="60"  class="filterDiv freamwork"/> </a> 
-                        <a href="https://opencv.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="opencv" width="60" height="60" class="filterDiv freamwork"/></a> 
-                        <a href="https://www.oracle.com/" target="_blank" rel="noreferrer" > <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/oracle/oracle-original.svg" alt="oracle" width="60" height="60"  class="filterDiv freamwork"/></a> 
-                        <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="60" height="60" class="filterDiv library"/></a>
-                        <a href="https://www.postgresql.org" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="60" height="60"  class="filterDiv freamwork"/></a> 
-                        <a href="https://postman.com" target="_blank" rel="noreferrer" ><img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="60" height="60"  class="filterDiv freamwork"/></a> 
-                        <a href="https://www.python.org" target="_blank" rel="noreferrer" ><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="60" height="60"  class="filterDiv language"/></a> 
-                        <a href="https://pytorch.org/" target="_blank" rel="noreferrer" ><img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="60" height="60"  class="filterDiv freamwork"/></a> 
-                        <a href="https://www.rabbitmq.com" target="_blank" rel="noreferrer" ><img src="https://www.vectorlogo.zone/logos/rabbitmq/rabbitmq-icon.svg" alt="rabbitMQ" width="60" height="60"  class="filterDiv freamwork"/></a> 
-                        <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer" ><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="60" height="60"  class="filterDiv library"/></a> 
-                        <a href="https://seaborn.pydata.org/" target="_blank" rel="noreferrer" ><img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="seaborn" width="60" height="60"  class="filterDiv library"/></a> 
-                        <a href="https://www.selenium.dev" target="_blank" rel="noreferrer" ><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Selenium_Logo.png/220px-Selenium_Logo.png" alt="selenium" width="60" height="60"  class="filterDiv library"/></a> 
-                        <a href="https://www.sqlite.org/" target="_blank" rel="noreferrer" ><img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="sqlite" width="60" height="60"  class="filterDiv language"/></a> 
-                    </div>                
-                </div>
-            </div>
-            <div class="accordion-item"><!-- YAPTIĞIM PROJELER-->
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                  YAPTIĞIM PROJELER
-                  </button>
-                </h2>
-                <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
-                            <div class="carousel-inner "    >
-                                <div class="carousel-item active  cardFlex" >                                
-                                    <div class="card mb-3 cardSize">
-                                        <div class="row g-0">
-                                          <div class="col-md-4">
-                                            <img src="https://justtotaltech.com/wp-content/uploads/2021/01/Twitter-sentiment-analysis.png" class="img-fluid rounded-start m-1 "alt="twitterwebanlysis">
-                                           </div>
-                                          <div class="col-md-8">
-                                            <div class="card-body">
-                                              <h5 class="card-title">Twitter Web Analysis</h5>
-                                              <p class="card-text"><small> Projemde twitter' dan çektigimiz tweetleri öncelikle metin ön isleme fonksiyonlar ile isledikten sonra önceden islenmis bir veri setine göre kelime vektörlestirme yöntemleri (Count Vectors, TF- IDF) ile vektörlere çevrildikten sonra makine ögrenme algoritmalaryla (Lojistik
-                                                Regresyon, Rondom Forest ‚XGboost ‚Navi Bayes) pozitif veya negatif olarak siniflandinilmaktadir. Makina ögrenmesi ile tweetler degrlendiriken vektörlestirme yöntemleri ve makine ögrenmesi yöntemlerinin en iyi sonucu verecek kombinasyon ile siniflandirma islemi yapilmaktadir. </small></p>
-                                                <button type="button" class="btn btn-outline-dark m-1">Projemi İncele</button>
-                                            </div>
-                                          </div>
-                                        </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="content-section">
+            <div class="container">
+                <h2 class="section-title reveal">NEURAL_PROFILE.dat</h2>
+                
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="glass-card reveal">
+                            <div class="terminal">
+                                <div class="terminal-header">
+                                    <div class="terminal-dots">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
                                     </div>
+                                    <span>system_profile.sh</span>
                                 </div>
-                                <div class="carousel-item cardFlex" >
-                                    <div class="card mb-3 cardSize">
-                                        <div class="row g-0">
-                                          <div class="col-md-4">
-                                            <img src="https://media.licdn.com/dms/image/D4D2DAQG8zeWC0jIVEA/profile-treasury-image-shrink_800_800/0/1685176495774?e=1722186000&v=beta&t=Grm20ZNmow8AEWUQ5MMUvBBKlMdxLC4Yu78ua3fZ0ok" class="img-fluid rounded-start m-1" alt="...">
-                                          </div>
-                                          <div class="col-md-8">
-                                            <div class="card-body">
-                                              <h5 class="card-title">Hızlı Vuruş Test Aygıtı</h5>
-                                              <p class="card-text">Gelistirmis oldugum aygit el beceri ve kordinasyon testlerinde kullanilan bir cihazdir. Donanim tarafinda arduino ile devre kartini tasarlarken , cihazin dis kabini solidworks kullanarak tasarlandi ve 3d yazicidan baskisi alind .Yazilim tarafinda ise C#
-                                                 kullanilarak masaüstü ugulamasi gelitistilerek kullanimi ve analiz sonuclarinin akinmasi daha kolay bir hale getirlidi.</p>
-                                                 <button type="button" class="btn btn-outline-dark m-1">Projemi İncele</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item cardFlex">
-                                    <div class="card mb-3 cardSize">
-                                        <div class="row g-0">
-                                          <div class="col-md-4">
-                                            <img src="https://media.istockphoto.com/id/1216319657/tr/vekt%C3%B6r/otob%C3%BCs-dura%C4%9F%C4%B1nda-toplu-ta%C5%9F%C4%B1ma-bekleyen-yolcular.jpg?s=612x612&w=0&k=20&c=AORAhxQIiBzrg5avVtlqTydyQNwXpcYA8QzivhhvgGg=" class="img-fluid rounded-start m-1 "alt="...">
-                                          </div>
-                                          <div class="col-md-8">
-                                            <div class="card-body">
-                                              <h5 class="card-title">T-BUS</h5>
-                                              <p class="card-text">Telegram api ve python ve selenium kütüphanesi kullanarak
-                                                geliştiediğim projemde kullanıcı telegramdan oluşturmuş
-                                                olduğumuz servise olduğu durağı ve gitmek istediği durağı yazarak 
-                                                mesaj olarak göndererek hangi otobüslerin o duraktan geçtiğini ve
-                                                ne zaman geleceği hakkında kullanıcıyı bilgilendirir .
-                                                </p>
-                                                <button type="button" class="btn btn-outline-dark m-1">Projemi İncele</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                    </div>
+                                <div class="terminal-content">
+                                    <p class="terminal-prompt">cat /home/sahin/profile.json</p>
+                                    <p>{</p>
+                                    <p>&nbsp;&nbsp;"name": "Şahin Bölükbaşı",</p>
+                                    <p>&nbsp;&nbsp;"current_role": "DevOps Engineer",</p>
+                                    <p>&nbsp;&nbsp;"previous_role": "Software Engineer",</p>
+                                    <p>&nbsp;&nbsp;"experience": "3+ years",</p>
+                                    <p>&nbsp;&nbsp;"core_expertise": [</p>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;"CI/CD Pipeline Design",</p>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;"Infrastructure as Code",</p>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;"Container Orchestration",</p>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;"Backend Architecture",</p>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;"Cloud Infrastructure"</p>
+                                    <p>&nbsp;&nbsp;],</p>
+                                    <p>&nbsp;&nbsp;"Mission": "To streamline collaboration between development and operations by implementing scalable, automated CI/CD pipelines, infrastructure as code, and cloud-native solutions."</p>
+                                    <p>}<span class="cursor">_</span></p>
                                 </div>
                             </div>
-                            <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev" >
-                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            </button>
-                            <button class="carousel-control-next "  type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
-                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            </button>
-                          </div>
-                    </div>
-                    
-                </div>
-            </div>    
-            <div class="accordion-item"><!-- TAKİP ETTİĞİM BLOGLAR-->
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                  TAKİP ETTİĞİM BLOGLAR
-                  </button>
-                </h2>
-                <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <div class="containerBlog">
-                            <a href="https://netflixtechblog.com/" target="_blank"> 
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png" class="img-thumbnail" alt="Netflix"> 
-                            </a>   
-                            <a href="https://www.uber.com/en-US/blog/engineering/" target="_blank"> 
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Uber_logo_2018.svg/1200px-Uber_logo_2018.svg.png" class="img-thumbnail" alt="Uber"> 
-                            </a>   
-                            <a href="https://blog.cloudflare.com/" target="_blank"> 
-                                <img src="https://blog.cloudflare.com/content/images/2022/10/CF_logo_stacked_blktype.png" class="img-thumbnail" alt="Cloudflare"> 
-                            </a>   
-                            <a href="https://engineering.linkedin.com/" target="_blank"> 
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1200px-LinkedIn_icon.svg.png" class="img-thumbnail" alt="LinkedIn"> 
-                            </a>   
-                            <a href="https://discord.com/blog/" target="_blank"> 
-                                <img src="https://upload.wikimedia.org/wikipedia/tr/5/57/Discord_logo_old.png" class="img-thumbnail" alt="Discord"> 
-                            </a>   
-                            <a href="https://aws.amazon.com/tr/architecture/?refid=04d8ec99-6d78-4091-9a39-d7ab44b457a5&cards-all.sort-by=item.additionalFields.sortDate&cards-all.sort-order=desc&awsf.content-type=*all&awsf.methodology=*all&awsf.tech-category=*all&awsf.industries=*all&awsf.business-category=*all" target="_blank"> 
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2xQcwKitRgXfqdi34DYlocPSEXD2G2zZipg&s" class="img-thumbnail" alt="AWS"> 
-                            </a>   
-                            <a href="https://slack.engineering/how-slack-built-shared-channels/" target="_blank"> 
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Slack_Technologies_Logo.svg/2560px-Slack_Technologies_Logo.svg.png" class="img-thumbnail" alt="Slack"> 
-                            </a>   
-                            <a href="https://stripe.com/blog" target="_blank"> 
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS0tqyRUVA3a5qlEcr0D6cPgtLs-9kvLb2vw&s" class="img-thumbnail" alt="Stripe"> 
-                            </a>   
+                        </div>
+                        
+                        <div class="glass-card reveal">
+                            <h4 style="color: var(--neon-pink); margin-bottom: 20px;">
+                                <i class="bi bi-cpu me-2"></i>CORE_SYSTEMS
+                            </h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6 style="color: var(--neon-cyan);">DEVOPS_INFRASTRUCTURE</h6>
+                                    <ul style="color: var(--text-secondary); list-style: none; padding-left: 0;">
+                                        <li>→ Azure DevOps & CI/CD Pipelines</li>
+                                        <li>→ Docker & Kubernetes Orchestration</li>
+                                        <li>→ Infrastructure as Code (IaC)</li>
+                                        <li>→ Monitoring & Logging Systems</li>
+                                        <li>→ Automated Testing & Deployment</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 style="color: var(--neon-green);">BACKEND_ARCHITECTURE</h6>
+                                    <ul style="color: var(--text-secondary); list-style: none; padding-left: 0;">
+                                        <li>→ .NET Core & ASP.NET MVC</li>
+                                        <li>→ Python Django/Flask APIs</li>
+                                        <li>→ RESTful API Development</li>
+                                        <li>→ Microservices Design</li>
+                                        <li>→ Database Design & Optimization</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <h6 style="color: var(--neon-purple);">CLOUD_PLATFORMS</h6>
+                                    <ul style="color: var(--text-secondary); list-style: none; padding-left: 0;">
+                                        <li>→ Microsoft Azure Services</li>
+                                        <li>→ Azure Functions & Logic Apps</li>
+                                        <li>→ Azure SQL & Cosmos DB</li>
+                                        <li>→ Service Bus & Event Grid</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 style="color: var(--neon-pink);">FRONTEND_INTEGRATION</h6>
+                                    <ul style="color: var(--text-secondary); list-style: none; padding-left: 0;">
+                                        <li>→ HTML5 & CSS3</li>
+                                        <li>→ JavaScript & DOM Manipulation</li>
+                                        <li>→ API Integration</li>
+                                        <li>→ Responsive Web Design</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card reveal">
+                            <h4 style="color: var(--neon-cyan); margin-bottom: 20px;">
+                                <i class="bi bi-gear me-2"></i>DEVOPS_TOOLKIT
+                            </h4>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h6 style="color: var(--neon-green);">AUTOMATION</h6>
+                                    <ul style="color: var(--text-secondary); list-style: none; padding-left: 0; font-size: 14px;">
+                                        <li>→ Azure DevOps</li>
+                                        <li>→ GitHub Actions</li>
+                                        <li>→ PowerShell Scripting</li>
+                                        <li>→ Bash Automation</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <h6 style="color: var(--neon-purple);">MONITORING</h6>
+                                    <ul style="color: var(--text-secondary); list-style: none; padding-left: 0; font-size: 14px;">
+                                        <li>→ Azure Application Insights</li>
+                                        <li>→ Azure Monitor</li>
+                                        <li>→ Log Analytics</li>
+                                        <li>→ Performance Monitoring</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <h6 style="color: var(--neon-pink);">SECURITY</h6>
+                                    <ul style="color: var(--text-secondary); list-style: none; padding-left: 0; font-size: 14px;">
+                                        <li>→ Azure Key Vault</li>
+                                        <li>→ Security Scanning</li>
+                                        <li>→ Access Management</li>
+                                        <li>→ Compliance Monitoring</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>      
-        </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section id="tech" class="content-section">
+            <div class="container">
+                <h2 class="section-title reveal">TECH_STACK.matrix</h2>
+                
+                <div class="filter-matrix reveal">
+                    <button class="filter-btn active" id="btn1" 
+                            onclick="filterSelection('all');toggleButtonType('btn1');">
+                        ALL_SYSTEMS
+                    </button>
+                    <button class="filter-btn" id="btn2" 
+                            onclick="filterSelection('language');toggleButtonType('btn2');">
+                        LANGUAGES
+                    </button>
+                    <button class="filter-btn" id="btn3" 
+                            onclick="filterSelection('framework');toggleButtonType('btn3');">
+                        FRAMEWORKS
+                    </button>
+                    <button class="filter-btn" id="btn4" 
+                            onclick="filterSelection('library');toggleButtonType('btn4');">
+                        LIBRARIES
+                    </button>
+                    <button class="filter-btn" id="btn5" 
+                            onclick="filterSelection('tool');toggleButtonType('btn5');">
+                        TOOLS
+                    </button>
+                </div>
+                
+                <div class="tech-matrix reveal">
+                    <!-- Programming Languages -->
+                    <a href="https://docs.microsoft.com/en-us/dotnet/csharp/" target="_blank" 
+                       class="tech-node filterDiv language" rel="noreferrer">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="C#">
+                        <span>C#</span>
+                    </a>
+                    <a href="https://www.python.org" target="_blank" 
+                       class="tech-node filterDiv language" rel="noreferrer">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python">
+                        <span>Python</span>
+                    </a>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" 
+                       class="tech-node filterDiv language" rel="noreferrer">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript">
+                        <span>JavaScript</span>
+                    </a>
+                    <a href="https://www.typescriptlang.org/" target="_blank" 
+                       class="tech-node filterDiv language" rel="noreferrer">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="TypeScript">
+                        <span>TypeScript</span>
+                    </a>
+
+                    <!-- Frameworks -->
+                    <a href="https://dotnet.microsoft.com/" target="_blank" 
+                       class="tech-node filterDiv framework" rel="noreferrer">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original-wordmark.svg" alt=".NET">
+                        <span>.NET</span>
+                    </a>
+                    <a href="https://reactjs.org/" target="_blank" 
+                       class="tech-node filterDiv framework" rel="noreferrer">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="React">
+                        <span>React</span>
+                    </a>
+                    <a href="https://www.djangoproject.com/" target="_blank" 
+                       class="tech-node filterDiv framework" rel="noreferrer">
+                        <img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="Django">
+                        <span>Django</span>
+                    </a>
+                    <a href="https://angular.io/" target="_blank" 
+                       class="tech-node filterDiv framework" rel="noreferrer">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original-wordmark.svg" alt="Angular">
+                        <span>Angular</span>
+                    </a>
+
+                    <!-- Libraries -->
+                    <a href="https://pandas.pydata.org/" target="_blank" 
+                       class="tech-node filterDiv library" rel="noreferrer">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="Pandas">
+                        <span>Pandas</span>
+                    </a>
+                    <a href="https://numpy.org/" target="_blank" 
+                       class="tech-node filterDiv library" rel="noreferrer">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg" alt="NumPy">
+                        <span>NumPy</span>
+                    </a>
+
+                    <!-- Tools -->
+                    <a href="https://azure.microsoft.com/" target="_blank" 
+                       class="tech-node filterDiv tool" rel="noreferrer">
+                        <img src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg" alt="Azure">
+                        <span>Azure</span>
+                    </a>
+                    <a href="https://www.docker.com/" target="_blank" 
+                       class="tech-node filterDiv tool" rel="noreferrer">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="Docker">
+                        <span>Docker</span>
+                    </a>
+                    <a href="https://git-scm.com/" target="_blank" 
+                       class="tech-node filterDiv tool" rel="noreferrer">
+                        <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git">
+                        <span>Git</span>
+                    </a>
+                    <a href="https://kubernetes.io" target="_blank" 
+                       class="tech-node filterDiv tool" rel="noreferrer">
+                        <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="Kubernetes">
+                        <span>Kubernetes</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="content-section">
+            <div class="container">
+                <h2 class="section-title reveal">PROJECT_ARCHIVE.db</h2>
+                
+                <div class="project-matrix reveal">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             class="project-image" alt="AI Sentiment Analysis">
+                        <div class="project-content">
+                            <h5 class="project-title">Neural_Sentiment_Engine</h5>
+                            <p class="project-description">
+                                Advanced machine learning system for real-time social media sentiment analysis. 
+                                Processes 10K+ tweets/hour with 95% accuracy using NLP and deep learning algorithms.
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">Twitter API</span>
+                                <span class="tech-tag">FastAPI</span>
+                            </div>
+                            <button class="cyber-btn" style="font-size: 12px; padding: 8px 16px;">
+                                ACCESS_PROJECT
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             class="project-image" alt="IoT Testing Device">
+                        <div class="project-content">
+                            <h5 class="project-title">Cyber_Reflex_Tester</h5>
+                            <p class="project-description">
+                                IoT-enabled reaction time testing device with real-time analytics dashboard. 
+                                Arduino-powered hardware with C# desktop integration and cloud data storage.
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">C#</span>
+                                <span class="tech-tag">Arduino</span>
+                                <span class="tech-tag">IoT</span>
+                                <span class="tech-tag">SolidWorks</span>
+                            </div>
+                            <button class="cyber-btn" style="font-size: 12px; padding: 8px 16px;">
+                                ACCESS_PROJECT
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             class="project-image" alt="Smart Transport">
+                        <div class="project-content">
+                            <h5 class="project-title">Quantum_Transport_Bot</h5>
+                            <p class="project-description">
+                                Intelligent Telegram bot for real-time public transport tracking with predictive arrival times. 
+                                Web scraping and API integration for seamless user experience.
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Selenium</span>
+                                <span class="tech-tag">Telegram API</span>
+                                <span class="tech-tag">Redis</span>
+                            </div>
+                            <button class="cyber-btn" style="font-size: 12px; padding: 8px 16px;">
+                                ACCESS_PROJECT
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blogs Section -->
+        <section id="blogs" class="content-section">
+            <div class="container">
+                <h2 class="section-title reveal">DATA_SOURCES.net</h2>
+                
+                <div class="glass-card reveal">
+                    <p style="color: var(--text-secondary); text-align: center; margin-bottom: 30px;">
+                        Neural networks constantly updated with latest tech intelligence from industry leaders
+                    </p>
+                </div>
+                
+                <div class="blog-matrix reveal">
+                    <a href="https://netflixtechblog.com/" target="_blank" class="blog-node">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png" alt="Netflix">
+                        <h6>Netflix Engineering</h6>
+                    </a>
+                    <a href="https://engineering.fb.com/" target="_blank" class="blog-node">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/1200px-Facebook_icon.svg.png" alt="Meta">
+                        <h6>Meta Engineering</h6>
+                    </a>
+                    <a href="https://www.uber.com/en-US/blog/engineering/" target="_blank" class="blog-node">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Uber_logo_2018.svg/1200px-Uber_logo_2018.svg.png" alt="Uber">
+                        <h6>Uber Engineering</h6>
+                    </a>
+                    <a href="https://engineering.linkedin.com/" target="_blank" class="blog-node">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1200px-LinkedIn_icon.svg.png" alt="LinkedIn">
+                        <h6>LinkedIn Engineering</h6>
+                    </a>
+                    <a href="https://aws.amazon.com/tr/blogs/" target="_blank" class="blog-node">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1200px-Amazon_Web_Services_Logo.svg.png" alt="AWS">
+                        <h6>AWS Architecture</h6>
+                    </a>
+                    <a href="https://developers.googleblog.com/" target="_blank" class="blog-node">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" alt="Google">
+                        <h6>Google Developers</h6>
+                    </a>
+                </div>
+            </div>
+        </section>
     </div>
-  </div>
-</div>
-<script>
 
-const options = {
-  bottom: 'unset', // default: '32px'
-  top: '1%', // default: '32px'
-  right: '2%', // default: '32px'
-  left: 'unset', // default: 'unset'
-  time: '0.3s', // default: '0.3s'
-  mixColor: '#fff', // default: '#fff'
-  backgroundColor: '#fff',  // default: '#fff'
-  buttonColorDark: '#100f2c',  // default: '#100f2c'
-  buttonColorLight: '#fff', // default: '#fff'
-  saveInCookies: false, // default: true,
-  label: '🌓', // default: ''
-  autoMatchOsTheme: true // default: true
-}
-const darkmode = new Darkmode(options);
-darkmode.showWidget();
+    <script>
+        // Particles.js Configuration
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#00ffff' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#00ffff',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
 
-filterSelection("all")
-function filterSelection(c) {
-  var x, i;
-  x = document.getElementsByClassName("filterDiv");
-  if (c == "all") c = "";
-      for (i = 0; i < x.length; i++) {
-          RemoveClass(x[i], "show");
-          if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
-      }
-}
-//Filter
-function AddClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-      if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-  }
-}
+        // Loading Screen
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loadingScreen').style.display = 'none';
+                }, 300);
+            }, 800);
+        });
 
-function RemoveClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-      while (arr1.indexOf(arr2[i]) > -1) {
-        arr1.splice(arr1.indexOf(arr2[i]), 1);     
-      }
-  }
-  element.className = arr1.join(" ");
-}
-  
-//Mail send
-function openMailClient() {
-    window.location.href = "mailto:sahinbolukbasii@gmail.com?subject=Konu&body=Mesaj metni";
-}
-//Toggel Button
-document.getElementById('btn1').classList.add('active-button');
-function toggleButtonType(buttonId) {
-    var buttons = document.querySelectorAll('.btn');
-    buttons.forEach(function(button) {
-    button.classList.remove('active-button');
-    });
-    var activeButton = document.getElementById(buttonId);  
-    activeButton.classList.add('active-button');
-}
+        // Email function
+        function openMailClient() {
+            window.location.href = 'mailto:sahinbolukbasi@gmail.com?subject=Portfolio Contact';
+        }
 
-</script>
+        // Smooth Scrolling Navigation
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('data-section');
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Reveal Animation on Scroll
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', reveal);
+        reveal(); // Check on page load
+
+        // Technology Filter Functions
+        filterSelection("all");
+
+        function filterSelection(category) {
+            const items = document.getElementsByClassName("filterDiv");
+            const searchCategory = category === "all" ? "" : category;
+            
+            for (let i = 0; i < items.length; i++) {
+                RemoveClass(items[i], "show");
+                if (items[i].className.indexOf(searchCategory) > -1) {
+                    AddClass(items[i], "show");
+                }
+            }
+        }
+
+        function AddClass(element, name) {
+            const arr1 = element.className.split(" ");
+            const arr2 = name.split(" ");
+            for (let i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) === -1) {
+                    element.className += " " + arr2[i];
+                }
+            }
+        }
+
+        function RemoveClass(element, name) {
+            let arr1 = element.className.split(" ");
+            const arr2 = name.split(" ");
+            for (let i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+
+        function toggleButtonType(buttonId) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            document.getElementById(buttonId).classList.add('active');
+        }
+
+        // Glitch effect function
+        function addGlitchEffect() {
+            const title = document.querySelector('.hero-title');
+            if (title) {
+                title.style.textShadow = '2px 0 #ff00ff, -2px 0 #00ffff';
+                setTimeout(() => {
+                    title.style.textShadow = '0 0 30px rgba(0, 255, 255, 0.5)';
+                }, 100);
+            }
+        }
+
+        // Random glitch effect
+        setInterval(addGlitchEffect, 10000);
+
+        // Matrix rain effect (optional)
+        function createMatrixRain() {
+            const canvas = document.createElement('canvas');
+            canvas.style.position = 'fixed';
+            canvas.style.top = '0';
+            canvas.style.left = '0';
+            canvas.style.width = '100%';
+            canvas.style.height = '100%';
+            canvas.style.pointerEvents = 'none';
+            canvas.style.zIndex = '-2';
+            canvas.style.opacity = '0.1';
+            document.body.appendChild(canvas);
+
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+            const matrixArray = matrix.split("");
+
+            const fontSize = 10;
+            const columns = canvas.width / fontSize;
+            const drops = [];
+
+            for (let x = 0; x < columns; x++) {
+                drops[x] = 1;
+            }
+
+            function draw() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.fillStyle = '#00ffff';
+                ctx.font = fontSize + 'px monospace';
+
+                for (let i = 0; i < drops.length; i++) {
+                    const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+
+            setInterval(draw, 35);
+        }
+
+        // Uncomment to enable matrix rain effect
+        // createMatrixRain();
+    </script>
 </body>
 </html>
- 
