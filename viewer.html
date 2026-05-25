@@ -1,295 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-    <title>Resume — Şahin Bölükbaşı</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="shortcut icon" href="https://img.icons8.com/ios/50/code--v1.png" type="image/x-icon">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-<style>
-:root { --t: 0.25s ease; }
-[data-theme="dark"] {
-    --bg:#080808;--bg2:#0e0e0e;--card:#111;--hover:#181818;
-    --b:#1e1e1e;--b2:#333;--txt:#f0f0f0;--txt2:#777;--txt3:#3a3a3a;
-    --shadow:rgba(0,0,0,.7);--frame-bg:#0d0d0d;
-}
-[data-theme="light"] {
-    --bg:#f8f8f8;--bg2:#f0f0f0;--card:#fff;--hover:#efefef;
-    --b:#e2e2e2;--b2:#aaa;--txt:#0a0a0a;--txt2:#555;--txt3:#ccc;
-    --shadow:rgba(0,0,0,.08);--frame-bg:#e8e8e8;
-}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-body{
-    font-family:'Inter',-apple-system,sans-serif;
-    background:var(--bg);color:var(--txt);overflow:hidden;
-    transition:background var(--t),color var(--t);
-}
-a{color:inherit;text-decoration:none}
-
-/* ── TOOLBAR ── */
-.toolbar{
-    position:fixed;top:0;left:0;right:0;z-index:100;
-    height:58px;display:flex;align-items:center;
-    justify-content:space-between;padding:0 28px;
-    background:var(--bg);border-bottom:1px solid var(--b);
-    transition:background var(--t),border-color var(--t);
-    gap:16px;
-}
-.tb-logo{
-    font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;
-    color:var(--txt2);letter-spacing:.5px;white-space:nowrap;
-    transition:color var(--t);
-}
-.tb-logo em{color:var(--txt3);font-style:normal;margin-left:6px;font-size:11px}
-
-/* Language toggle */
-.lang-toggle{
-    display:flex;align-items:center;gap:0;
-    border:1px solid var(--b);border-radius:8px;overflow:hidden;
-    background:var(--bg2);transition:border-color var(--t),background var(--t);
-}
-.lang-btn{
-    padding:6px 16px;font-size:12px;font-weight:700;letter-spacing:.5px;
-    color:var(--txt2);background:transparent;border:none;cursor:pointer;
-    transition:all var(--t);font-family:'JetBrains Mono',monospace;
-}
-.lang-btn:first-child{border-right:1px solid var(--b);transition:border-color var(--t)}
-.lang-btn.active{background:var(--txt);color:var(--bg)}
-.lang-btn:not(.active):hover{background:var(--hover);color:var(--txt)}
-
-.tb-mid{display:flex;align-items:center;gap:8px;flex:1;justify-content:center}
-
-/* Zoom controls */
-.zoom-group{
-    display:flex;align-items:center;gap:0;
-    border:1px solid var(--b);border-radius:8px;overflow:hidden;
-    background:var(--bg2);transition:border-color var(--t),background var(--t);
-}
-.z-btn{
-    width:34px;height:32px;background:transparent;border:none;
-    color:var(--txt2);cursor:pointer;font-size:16px;font-weight:600;
-    display:flex;align-items:center;justify-content:center;
-    transition:all var(--t);
-}
-.z-btn:hover{background:var(--hover);color:var(--txt)}
-.z-level{
-    min-width:52px;text-align:center;
-    font-family:'JetBrains Mono',monospace;font-size:11.5px;
-    font-weight:600;color:var(--txt2);padding:0 4px;
-    border-left:1px solid var(--b);border-right:1px solid var(--b);
-    transition:all var(--t);
-}
-
-/* Toolbar right buttons */
-.tb-r{display:flex;align-items:center;gap:8px}
-.tb-btn{
-    display:inline-flex;align-items:center;gap:6px;
-    padding:6px 15px;font-size:12px;font-weight:600;
-    border:1px solid var(--b);border-radius:8px;
-    background:transparent;color:var(--txt2);cursor:pointer;
-    transition:all var(--t);white-space:nowrap;
-}
-.tb-btn:hover{border-color:var(--b2);color:var(--txt);background:var(--hover)}
-.tb-btn-primary{background:var(--txt);color:var(--bg);border-color:var(--txt)}
-.tb-btn-primary:hover{opacity:.82;background:var(--txt);color:var(--bg)}
-.tb-btn-primary:disabled{opacity:.45;cursor:not-allowed;pointer-events:none}
-.theme-btn{
-    width:34px;height:34px;border:1px solid var(--b);background:var(--bg2);
-    border-radius:7px;display:flex;align-items:center;justify-content:center;
-    font-size:13px;color:var(--txt2);cursor:pointer;transition:all var(--t);
-}
-.theme-btn:hover{border-color:var(--b2);color:var(--txt)}
-
-/* ── CV STAGE ── */
-.stage{
-    position:fixed;top:58px;left:0;right:0;bottom:0;
-    overflow:auto;background:var(--frame-bg);
-    display:flex;justify-content:center;
-    padding:28px 20px 40px;
-    transition:background var(--t);
-}
-.cv-wrap{
-    transform-origin:top center;
-    transition:transform .25s ease;
-    height:fit-content;
-}
-.cv-frame{
-    background:#fff;
-    box-shadow:0 4px 40px var(--shadow);
-    width:210mm;
-    overflow:hidden;
-}
-iframe{
-    border:none;display:block;
-    width:210mm;height:297mm;
-}
-
-/* ── TOAST ── */
-.toast{
-    position:fixed;bottom:28px;left:50%;
-    transform:translateX(-50%) translateY(20px);
-    background:var(--card);border:1px solid var(--b2);
-    border-radius:10px;padding:10px 20px;
-    font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--txt2);
-    z-index:500;opacity:0;pointer-events:none;
-    transition:all .3s ease;white-space:nowrap;
-}
-.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-
-/* ── LOADING ── */
-.loading{
-    position:fixed;inset:0;background:var(--bg);
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    z-index:200;gap:16px;transition:opacity .4s ease;
-}
-.loading.hidden{opacity:0;pointer-events:none}
-.ld-ring{
-    width:36px;height:36px;border-radius:50%;
-    border:2px solid var(--b2);border-top-color:var(--txt);
-    animation:spin .8s linear infinite;
-}
-@keyframes spin{to{transform:rotate(360deg)}}
-.ld-txt{
-    font-family:'JetBrains Mono',monospace;font-size:11px;
-    letter-spacing:2px;color:var(--txt3);text-transform:uppercase;
-    transition:color var(--t);
-}
-
-/* ── RESPONSIVE ── */
-@media(max-width:700px){
-    .tb-mid{display:none}
-    .toolbar{padding:0 12px;gap:8px}
-    .tb-logo{font-size:11px}
-    .tb-logo em{display:none}
-    .tb-btn span:not(.always){display:none}
-    .tb-btn{padding:6px 10px}
-    .stage{padding:12px 0 24px;align-items:flex-start;overflow-x:hidden}
-    /* CV frame keeps its A4 dimensions — scaled via JS applyZoom */
-    .cv-wrap{transform-origin:top center}
-    .cv-frame{width:210mm;overflow:hidden}
-    iframe{width:210mm;height:297mm}
-}
-</style>
-</head>
-<body>
-
-<div class="loading" id="loading">
-    <div class="ld-ring"></div>
-    <div class="ld-txt">Loading resume...</div>
-</div>
-
-<div class="toast" id="toast"></div>
-
-<!-- ── TOOLBAR ── -->
-<div class="toolbar">
-
-    <div class="tb-logo">
-        sb.dev
-        <em>/ resume</em>
-    </div>
-
-    <div class="tb-mid">
-        <!-- Language -->
-        <div class="lang-toggle">
-            <button class="lang-btn active" id="btnEn" onclick="setLang('en')">EN</button>
-            <button class="lang-btn" id="btnTr" onclick="setLang('tr')">TR</button>
-        </div>
-
-        <!-- Zoom -->
-        <div class="zoom-group">
-            <button class="z-btn" onclick="zoomOut()" title="Zoom out">−</button>
-            <span class="z-level" id="zoomLevel">100%</span>
-            <button class="z-btn" onclick="zoomIn()" title="Zoom in">+</button>
-        </div>
-    </div>
-
-    <div class="tb-r">
-        <button class="tb-btn tb-btn-primary" id="dlBtn" onclick="downloadPDF()">
-            <i class="bi bi-download"></i>
-            <span id="dlBtnText">Download PDF</span>
-        </button>
-        <button class="tb-btn" onclick="printCV()">
-            <i class="bi bi-printer"></i>
-            <span class="hide-sm">Print</span>
-        </button>
-        <a href="index.html" class="tb-btn">
-            <i class="bi bi-arrow-left"></i>
-            <span class="hide-sm">Portfolio</span>
-        </a>
-        <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
-            <i class="bi bi-moon-fill" id="themeIcon"></i>
-        </button>
-    </div>
-
-</div>
-
-<!-- ── CV STAGE ── -->
-<div class="stage" id="stage">
-    <div class="cv-wrap" id="cvWrap">
-        <div class="cv-frame">
-            <iframe id="cvIframe" scrolling="no"></iframe>
-        </div>
-    </div>
-</div>
-
-
+<!-- ... önceki kodlar ... -->
+<button class="tb-btn tb-btn-primary" id="dlBtn" onclick="downloadPDF()">
+    <i class="bi bi-download"></i>
+    <span id="dlBtnText">Download PDF</span>
+</button>
 <script>
-let zoom = 100;
-let lang = 'en';
-
-/* ── Load CV ── */
-function loadCV() {
-    const iframe = document.getElementById('cvIframe');
-    const file = lang === 'en' ? 'cv_en.html' : 'cv_tr.html';
-    document.getElementById('loading').classList.remove('hidden');
-    iframe.src = file;
-    iframe.onload = () => {
-        document.getElementById('loading').classList.add('hidden');
-    };
-    document.getElementById('btnEn').classList.toggle('active', lang === 'en');
-    document.getElementById('btnTr').classList.toggle('active', lang === 'tr');
-}
-
-function setLang(l) {
-    if (lang === l) return;
-    lang = l;
-    loadCV();
-}
-
-/* ── Zoom ── */
-function applyZoom() {
-    const scale = zoom / 100;
-    const wrap = document.getElementById('cvWrap');
-    wrap.style.transform = `scale(${scale})`;
-    document.getElementById('zoomLevel').textContent = zoom + '%';
-    /* On mobile collapse the dead space left by CSS transform */
-    if (window.innerWidth <= 700) {
-        const naturalPx = 1123; /* 297mm at 96 dpi */
-        wrap.style.height = Math.ceil(naturalPx * scale) + 'px';
-    } else {
-        wrap.style.height = 'fit-content';
-    }
-}
-
-function zoomIn()  { if (zoom < 200) { zoom += 10; applyZoom(); } }
-function zoomOut() { if (zoom > 20)  { zoom -= 10; applyZoom(); } }
-
-function initZoom() {
-    if (window.innerWidth <= 700) {
-        const available = window.innerWidth - 4; /* tiny padding */
-        const cvNaturalPx = 794; /* 210mm at 96 dpi */
-        zoom = Math.max(20, Math.floor((available / cvNaturalPx) * 100));
-    } else {
-        zoom = 100;
-    }
-    applyZoom();
-}
-
-/* ── Download PDF  (fetch → inject → html2pdf → auto-download) ── */
 async function downloadPDF() {
     const btn = document.getElementById('dlBtn');
     const btnText = document.getElementById('dlBtnText');
@@ -297,41 +11,31 @@ async function downloadPDF() {
     btnText.textContent = 'Hazırlanıyor…';
     showToast('PDF oluşturuluyor…', 12000);
 
-    const file = lang === 'en' ? 'cv_en.html' : 'cv_tr.html';
+    const file = (typeof lang !== "undefined" && lang === 'en') ? 'cv_en.html' : 'cv_tr.html';
     let wrapper = null;
 
     try {
-        /* 1 — Fetch the CV HTML source */
         const res = await fetch(file);
-        if (!res.ok) throw new Error('Dosya alınamadı: ' + res.status);
+        if (!res.ok) throw new Error('Dosya alınamadı veya bulunamadı: ' + res.status);
         const html = await res.text();
 
-        /* 2 — Parse and extract style + container */
         const parsed = new DOMParser().parseFromString(html, 'text/html');
         const cvStyle  = parsed.querySelector('style');
         const container = parsed.querySelector('.container');
-        if (!container) throw new Error('.container bulunamadı');
+        if (!container) throw new Error('CV içeriği (.container) bulunamadı. cv_tr.html içeriğini kontrol edin!');
 
-        /* 3 — Inject off-screen into the current document so
-               html2canvas can access computed styles and loaded fonts */
         wrapper = document.createElement('div');
-        wrapper.style.cssText =
-            'position:fixed;top:0;left:-9999px;width:210mm;z-index:-99;';
-
+        wrapper.style.cssText = 'position:fixed;top:0;left:-9999px;width:210mm;z-index:-99;';
         const s = document.createElement('style');
-        s.textContent = (cvStyle ? cvStyle.textContent : '') + '\n' +
-            '* { -webkit-print-color-adjust:exact!important;' +
-            '    print-color-adjust:exact!important; }';
+        s.textContent = (cvStyle ? cvStyle.textContent : '') + '\n*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}';
         wrapper.appendChild(s);
-
         const clone = container.cloneNode(true);
         wrapper.appendChild(clone);
         document.body.appendChild(wrapper);
 
-        /* 4 — Wait two animation frames so the browser finishes layout */
+        // layout için 2 frame bekleme
         await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
 
-        /* 5 — Generate PDF */
         await html2pdf()
             .set({
                 margin: 0,
@@ -343,7 +47,7 @@ async function downloadPDF() {
                     allowTaint: true,
                     logging: false,
                     backgroundColor: '#ffffff',
-                    width:  clone.offsetWidth  || 794,
+                    width: clone.offsetWidth  || 794,
                     height: clone.offsetHeight || 1123
                 },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
@@ -351,10 +55,10 @@ async function downloadPDF() {
             .from(clone)
             .save();
 
-        showToast('sahinbolukbasi.pdf indirildi');
-
+        showToast('sahinbolukbasi.pdf başarıyla indirildi!');
     } catch (err) {
         showToast('Hata: ' + err.message);
+        alert('CV PDF indirilemedi: ' + err.message);
         console.error('PDF error:', err);
     } finally {
         if (wrapper && wrapper.parentNode) wrapper.parentNode.removeChild(wrapper);
@@ -362,67 +66,5 @@ async function downloadPDF() {
         btnText.textContent = 'Download PDF';
     }
 }
-
-/* ── Print ── */
-function printCV() {
-    const iframe = document.getElementById('cvIframe');
-    if (!iframe.contentWindow || !iframe.contentDocument) {
-        showToast('CV henüz yüklenmedi');
-        return;
-    }
-    if (!iframe.contentDocument.getElementById('__pfix__')) {
-        const s = iframe.contentDocument.createElement('style');
-        s.id = '__pfix__';
-        s.textContent =
-            '* { -webkit-print-color-adjust:exact!important;' +
-            '    print-color-adjust:exact!important;' +
-            '    color-adjust:exact!important; }' +
-            '.sidebar { background:#0a0a0a!important; }';
-        iframe.contentDocument.head.appendChild(s);
-    }
-    iframe.contentWindow.focus();
-    setTimeout(() => iframe.contentWindow.print(), 150);
-}
-
-/* ── Toast ── */
-function showToast(msg, duration = 3500) {
-    const t = document.getElementById('toast');
-    t.textContent = msg;
-    t.classList.add('show');
-    clearTimeout(t._tid);
-    t._tid = setTimeout(() => t.classList.remove('show'), duration);
-}
-
-/* ── Theme ── */
-const html = document.documentElement;
-const themeBtn = document.getElementById('themeBtn');
-const themeIcon = document.getElementById('themeIcon');
-let dark = !window.matchMedia('(prefers-color-scheme: light)').matches;
-function applyTheme() {
-    html.setAttribute('data-theme', dark ? 'dark' : 'light');
-    themeIcon.className = dark ? 'bi bi-moon-fill' : 'bi bi-sun-fill';
-}
-applyTheme();
-themeBtn.addEventListener('click', () => { dark = !dark; applyTheme(); });
-
-/* ── URL param ── */
-const p = new URLSearchParams(window.location.search);
-if (p.get('lang') === 'tr') lang = 'tr';
-
-/* ── Keyboard shortcuts ── */
-document.addEventListener('keydown', e => {
-    if ((e.ctrlKey || e.metaKey) && e.key === 'p') { e.preventDefault(); printCV(); }
-    if ((e.ctrlKey || e.metaKey) && (e.key === '=' || e.key === '+')) { e.preventDefault(); zoomIn(); }
-    if ((e.ctrlKey || e.metaKey) && e.key === '-') { e.preventDefault(); zoomOut(); }
-    if ((e.ctrlKey || e.metaKey) && e.key === '0') { e.preventDefault(); zoom=100; applyZoom(); }
-});
-
-window.addEventListener('resize', () => {
-    if (window.innerWidth <= 700) initZoom();
-});
-
-/* ── Init ── */
-window.onload = () => { loadCV(); initZoom(); };
 </script>
-</body>
-</html>
+<!-- ... devam eden kodlar ... -->
